@@ -13,7 +13,7 @@ public:
 	    // Your code goes here
 	    string temp="";
     int n=S.length();
-    int freq[26]={0};
+    int freq[26]={0};//important to initialize it to 0 otherwise garbage value stored which can be a problem.
     
     for (int i=0;i<n;i++){//storing in freq aray
        int k= S[i]-'a';
