@@ -1,12 +1,11 @@
 # Kadane's Algorithm
-## Medium 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array <strong>Arr[]&nbsp;</strong>of <strong>N</strong> integers. Find the contiguous sub-array(containing at least one number) which has the&nbsp;maximum sum and return its sum.</span></p>
+## Medium
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array <strong>Arr[]&nbsp;</strong>of <strong>N</strong> integers. Find the contiguous sub-array(containing at least one number) which has the&nbsp;maximum sum and return its sum.</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 </strong>N = 5
 Arr[] = {1,2,3,-2,5}
 <strong>Output:
@@ -15,18 +14,18 @@ Explanation:
 </strong>Max subarray sum is 9
 of elements (1, 2, 3, -2, 5) which 
 is a contiguous subarray.</span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
+<pre><span style="font-size:18px"><strong>Input:
 </strong>N = 4
 Arr[] = {-1,-2,-3,-4}
 <strong>Output:
 </strong>-1<strong>
 Explanation:
 </strong>Max subarray sum is -1 
-of element (-1)</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+of element (-1)</span></pre>
 
 <p><br>
 <span style="font-size:18px"><strong>Your Task:</strong><br>
@@ -40,5 +39,4 @@ You don't need to read input or print anything.&nbsp;The task is to complete the
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ N ≤ 10<sup>6</sup><br>
 -10<sup>7</sup> ≤ A[i] ≤ 10<sup>7</sup></span></p>
- <p></p>
-            </div>
+</div>
