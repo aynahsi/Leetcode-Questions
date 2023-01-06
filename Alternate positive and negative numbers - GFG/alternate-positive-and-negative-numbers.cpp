@@ -47,7 +47,7 @@ public:
 	
 	//when negative sec gets over
 	       
-	        if (size1>size2){
+	        if (sec>=size2 && first<size1){
 	            while (first<size1){
 	           arr[i]=pos[first];
 	           first++;
