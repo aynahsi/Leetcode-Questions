@@ -11,19 +11,22 @@ class Solution{
 public:
     int getPairsCount(int arr[], int n, int k) {
         // code here
-        
-        map<int,int>m;
-        int count=0;
-        for(int i=0;i<n;i++){
-            if(m[arr[i]]>0){
-                count=count+m[arr[i]];
-            }
-            if(arr[i]<=k)
-            m[k-arr[i]]++;
-        }
-       return count; 
+         unordered_map <int, int > ok;
+          int b=0;
+          int ans=0;
+          for (int i=0;i<n;i++){
+              
+              b=k-arr[i];
+              if (ok[b]){
+                  ans=ans +ok[b];
+              }
+              
+              
+              ok[arr[i]]++;
+              
+          }
+        return ans;
     }
-    
 };
 
 //{ Driver Code Starts.
