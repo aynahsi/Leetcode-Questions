@@ -118,20 +118,29 @@ class Solution{
     }
     public:
     //Function to check whether a binary tree is balanced or not.
-    int isBalanced(Node* root){
+    pair<bool,int> isBalancedFast(Node* root){
+       
         if (root==NULL){
-            return true;
+            pair<bool,int>p=make_pair(true,0);
+            return p;
         }
         
-        bool left=isBalanced(root->left);
-        bool right =isBalanced (root->right);
+        pair<bool,int> lefta=isBalancedFast(root->left);
+        pair<bool,int> righta =isBalancedFast (root->right);
         
-        bool ans=abs(height(root->left)-height(root->right))<=1?true:false;
-        
-        if (left && right && ans){
-            return 1;
+       
+        bool diff =abs(lefta.second-righta.second)<=1?true:false;
+        pair<bool,int>ans;
+        ans.second=max(lefta.second,righta.second)+1;
+        if (lefta.first && righta.first && diff){
+             ans.first=true;
         }
-        else return 0;
+        else  ans.first=false;
+        return ans;
+    }
+    
+    int isBalanced(Node* root){
+        return isBalancedFast(root).first;
     }
 };
 
