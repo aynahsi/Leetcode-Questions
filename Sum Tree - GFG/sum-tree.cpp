@@ -95,58 +95,44 @@ struct Node
 class Solution
 {
     public:
-    
+    pair<bool,int> isSum(Node* root)
+    {
          // Your code here
          
-        pair<bool,int> solve(Node* root){
-        if(root==NULL){
-            pair<bool,int>p=make_pair(true,0);
-            return p;
-        }
-        if(root->left==NULL && root->right==NULL){
-        pair<bool,int>p=make_pair(true,root->data);
-        return p;
-        }
+         if (root==NULL){
+             pair<bool,int>p=make_pair(true,0);
+             return p;
+         }
+         
+         if (root->left==NULL && root->right==NULL){
+             pair<bool,int>p=make_pair(true,root->data);
+             return p;
+         }
+         
+         pair<bool,int>lefta=isSum(root->left);
+         pair<bool,int>righta=isSum(root->right);
+         
+         bool sum=(root->data==lefta.second +righta.second)?true:false;
+         
+          pair<bool,int>ans;
         
+         if (lefta.first && righta.first && sum){
+             ans.first =true;
+              ans.second=2*root->data;
+         }
+        else {ans.first=false;}
         
-        pair<bool,int> leftans=solve(root->left);
-        pair<bool,int> rightans=solve(root->right);
-        
-        
-        bool l=leftans.first;
-        bool r=rightans.first;
-        bool condn=root->data==leftans.second+ rightans.second;
-        
-        
-        
-        pair<bool,int> ans;
-        
-        
-        if(l&&r&&condn){
-            ans.first=true;
-            ans.second=2*root->data;
-        }
-        
-        
-        else{
-            ans.first=false;
-        }
-        
-        
-        return ans;
-        
-        
+         return ans;
     }
     
+    bool isSumTree(Node* root){
+        isSum(root).first;
+    }
+   
+   
    
     
-    
-    bool isSumTree(Node* root)
-    {
-         return solve(root).first;
-    }
 };
-
 
 //{ Driver Code Starts.
 
