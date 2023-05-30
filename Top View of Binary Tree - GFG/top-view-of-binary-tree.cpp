@@ -106,37 +106,34 @@ class Solution
  vector<int> topView(Node *root)
     {
         vector<int> ans;
-        if(root == NULL) 
+        
+        
+        map<int,int>nmap;
+        queue<pair<Node*, int> > q;
+       
+       if(root == NULL) 
         {
             return ans;
         }
-        
-        map<int,int> topNode;
-        queue<pair<Node*, int> > q;
-        
-        q.push(make_pair(root, 0));
+        q.push({root, 0});
         
         while(!q.empty()) {
-            pair<Node*, int> temp = q.front();
+           Node* temp = q.front().first;
+           int hd=q.front().second;
             q.pop();
-            Node* frontNode = temp.first;
-            int hd = temp.second;
             
             //if one value is present for a HD, then do nothing
-            if(topNode.find(hd) == topNode.end())
-                topNode[hd] = frontNode -> data;
+          if (!nmap[hd])nmap[hd]=temp->data;
                 
-            if(frontNode->left)
-                q.push(make_pair(frontNode->left, hd-1));
-            if(frontNode->right)
-                q.push(make_pair(frontNode->right, hd+1));
+            if(temp->left)
+                q.push(make_pair(temp->left, hd-1));
+            if(temp->right)
+                q.push(make_pair(temp->right, hd+1));
         }
         
-        for(auto i:topNode) 
-        {
-            ans.push_back(i.second);
-        }
-        return ans;
+        for(auto i:nmap)ans.push_back(i.second);
+        
+       
     }
 
 };
