@@ -14,26 +14,29 @@ class Solution{
     vector<int> help_classmate(vector<int> arr, int n) 
     { 
         // Your code goes here
-        stack<int> st;
-        st.push(0);
-        vector<int> final(n,-1);
-        
-        for(int i=1;i<n;i++){
-            int next=arr[i];
-            if (!st.empty() && next<arr[st.top()]){
-                while(!st.empty() && next<arr[st.top()]){
-                final[st.top()]=next;
+        stack<int>st;
+        st.push(-1);
+        int k =arr.size();
+        vector<int>ans(k);
+        for (int i =k-1; i>=0;i--){
+           int curr=arr[i];
+            while (st.top()>= curr){
                 st.pop();
-                }
-                st.push(i);
-                
             }
-            else {
-            st.push(i);
+            if (st.top()<curr){
+                ans[i]=(st.top());
+                st.push(curr);
             }
             
-        }
-        return final;
+           
+               
+                
+                
+            }
+        
+        
+        // reverse(ans.begin(),ans.end());
+        return ans;
     } 
 };
 
