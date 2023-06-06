@@ -16,15 +16,14 @@ class Solution{
         // Your code goes here
         stack<int>st;
         st.push(-1);
-        int k =arr.size();
-        vector<int>ans(k);
-        for (int i =k-1; i>=0;i--){
+        vector<int>ans;
+        for (int i =arr.size()-1; i>=0;i--){
            int curr=arr[i];
             while (st.top()>= curr){
                 st.pop();
             }
             if (st.top()<curr){
-                ans[i]=(st.top());
+                ans.push_back(st.top());
                 st.push(curr);
             }
             
@@ -35,7 +34,7 @@ class Solution{
             }
         
         
-        // reverse(ans.begin(),ans.end());
+        reverse(ans.begin(),ans.end());
         return ans;
     } 
 };
