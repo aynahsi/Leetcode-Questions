@@ -9,32 +9,30 @@ using namespace std;
 
 class Solution{
 public:
-    vector<int> nextPermutation(int n, vector<int> arr){
+    vector<int> nextPermutation(int N, vector<int> arr){
         // code here
-        int i,j ;
-        for ( i=n-2;i>=0;i--){
-            if (arr[i]<arr[i+1]){
+        int index = -1;
+        for ( int i = N-1;i >=0;i--){//findig the breakpoint
+            if (arr[i]>arr[i-1]){
+                index = i-1;
                 break;
             }
         }
         
-        if (i<0){
+        if ( index == -1){
             reverse(arr.begin(),arr.end());
         }
         
-        else  {
-                for ( j=n-1;j>i;j--){
-                        if (arr[j]>arr[i]){
-                             break;
-                                            }
-                                    }       
-            
-                     swap(arr[i],arr[j]);
-                    reverse(arr.begin()+i+1,arr.end());
-            
-                
+        else{
+        for (int i = N-1;i>index;i--){
+            if (arr[i]>arr[index]){
+                swap(arr[i],arr[index]);
+                break;
             }
-        
+        }
+        int k =index+1;
+        sort(arr.begin()+k ,arr.end());
+        }
         return arr;
     }
 };
