@@ -6,52 +6,37 @@ using namespace std;
 class Solution {
 public:
 
-    void dfs(int row, int col, vector<vector<int>>&ans, int inicolor, int color, int delrow[],int delcol[] ,vector<vector<int>>&image){
-
-    ans[row][col]=color;
-
-    int n=image.size();
-
-    int m=image[0].size();
-
-    for(int i=0; i<4; i++){
-
-        int nrow=row+delrow[i];
-
-        int ncol=col+delcol[i];
-
-        // using dfs algorithm to perform this flood fill algorithm 
-
-        if(nrow>=0 && nrow<n && ncol>=0 && ncol<m &&image[nrow][ncol]==inicolor && ans[nrow][ncol]!=color){
-
-            dfs(nrow,ncol,ans,inicolor,color,delrow,delcol,image);
-
- 
-
+    void dfs(int i, int j, vector<vector<int>>& image, vector<vector<int>>&ans,vector<vector<int>>&vis, int newColor, int oldcolor ){
+         int n = image.size() ;
+         int m = image[0].size() ;
+        
+        if (i>=n || i<0 || j>=m || j<0 || vis[i][j] == 1  || ans[i][j] == newColor){
+            return;
         }
-
+        
+        vis[i][j] = 1;
+        
+        if(image[i][j] ==  oldcolor){
+        ans[i][j] = newColor;
+        
+        dfs(i-1,j,image,ans,vis,newColor,oldcolor);
+        dfs(i+1,j,image,ans,vis,newColor,oldcolor);
+        dfs(i,j-1,image,ans,vis,newColor,oldcolor);
+        dfs(i,j+1,image,ans,vis,newColor,oldcolor);
+        }
     }
-
-}
-
     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
-
-        // Code here 
-
-         vector<vector<int>>ans=image;
-
-        int inicolor=image[sr][sc];
-
-        int delrow[]={-1,0,+1,0};
-
-        int delcol[]={0,+1,0,-1};
-
-        dfs(sr,sc,ans,inicolor,newColor,delrow,delcol,image);
-
-        return ans;
-
+        // Code here
+        int n = image.size() ;
+        int m = image[0].size() ;
+        vector<vector<int>>vis(n,vector<int>(m,0)) ;
+        vector<vector<int>>ans = image; 
+        int oldcolor= image[sr][sc] ;
+        
+        dfs(sr, sc, image, ans, vis, newColor, oldcolor);
+        
+        return ans ;
     }
-
 };
 
 //{ Driver Code Starts.
