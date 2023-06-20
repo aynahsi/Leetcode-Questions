@@ -9,45 +9,41 @@ using namespace std;
 class Solution {
   public:
   
-    void dfs(int node, vector<int>adjls[], int V,int vis[]){
+    void dfs( int node, vector<int>adjl[],vector<int>&vis ){
         
         vis[node] = 1;
         
-        for(auto it : adjls[node] ){
+        for (auto it : adjl[node]){
             if(!vis[it]){
-               
-                dfs(it, adjls,V, vis) ;
+                dfs(it, adjl, vis);
             }
         }
     }
-    
     int numProvinces(vector<vector<int>> adj, int V) {
         // code here
         
-        //converting matrix to list 
-        vector<int>adjls[V];
-        for( int i =0 ; i< V; i++){
-            for ( int j =0 ;j<V; j++){
-                if (adj[i][j] == 1 && i!=j){
-                    adjls[i].push_back(j);
-                     adjls[j].push_back(i);
+        vector<int>adjl[V];
+        
+        for(int i = 0 ;i < V ;i++){
+            for ( int j = 0 ; j< V ; j++){
+                if(adj[i][j] == 1 && i!= j){
+                    adjl[i].push_back(j);
+                    adjl[j].push_back(i);
                 }
             }
         }
         
-        int vis[V] ={0} ;
-        int count = 0 ;
-        
-        
-        for ( int i = 0 ;i <V; i++){
-            if (!vis[i]){
+        vector<int>vis(V,0);
+        int count = 0;
+        for ( int i =0;i< V ;i++){
+            if(!vis[i]){
                 count++;
-                dfs(i, adjls,V, vis);
+                dfs(i, adjl, vis );
             }
         }
         return count ;
-    }
-};
+    }  
+    };
 
 //{ Driver Code Starts.
 
