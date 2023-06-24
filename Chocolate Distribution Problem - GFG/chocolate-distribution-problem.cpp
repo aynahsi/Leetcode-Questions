@@ -10,10 +10,13 @@ class Solution{
     sort(a.begin(), a.end());
     
     int i = 0;
-    int j = m-1;
-    
+    int j = -1;
+    while (m>0){
+        j++;
+        m--;
+    }
    
-   long long ans = INT_MAX ; 
+   long long ans = INT_MAX; 
    while (j<n){
        ans = min(ans, (a[j]-a[i]));
        i++;
