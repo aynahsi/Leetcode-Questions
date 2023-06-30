@@ -108,7 +108,7 @@ class Solution{
       int count=0;
      while (!q.empty()){
          Node* temp=q.front();
-          q.pop();
+           q.pop();
         
                 if (temp==NULL){ count++;
                     if (!q.empty()){
