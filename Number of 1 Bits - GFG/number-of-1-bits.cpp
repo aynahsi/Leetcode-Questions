@@ -8,17 +8,14 @@ class Solution {
     int setBits(int N) {
         // Write Your Code here
         
-        int count = 0;
-        
-        for ( int i = 0; i < log2(N)+1; i++ ){
-        int mask= 1<<i;
-        if ((mask & N) > 0){
-            count++;
-        }
-        else continue;
-    }
-    
-    return count ;
+       int count = 0 ;
+       for ( int i = 0 ;i < log2(N)+1 ; i ++){
+           if ((N>>i & 1) > 0 ){
+               count++ ;
+           }
+       }
+       
+       return count ;
     }
 };
 
