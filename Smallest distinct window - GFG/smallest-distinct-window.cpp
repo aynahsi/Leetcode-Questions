@@ -25,11 +25,14 @@ class Solution{
             
             
             if (n == mp.size()){
-                while (mp[str[i]] > 1){
+                while (n== mp.size()){
                     mp[str[i] ]--;
+                    if (mp[str[i]] == 0){
+                        mp.erase(str[i]);
+                    }
                     i++;
                 }
-                ans= min(ans ,j-i+1) ;
+                ans= min(ans ,j-i+2) ;
             }
             
            j++; 
