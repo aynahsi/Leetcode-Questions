@@ -31,8 +31,8 @@ class Solution{
                             int index2 = minH.top().second.second ;
                             int mini = minH.top().first ;
                             minH.pop() ;
-                            if (maxi -mini+1< range){
-                                range = maxi -mini +1;
+                            if (maxi -mini< range){
+                                range = maxi -mini ;
                                 lefty = mini ;
                                 righty = maxi;
                             }
