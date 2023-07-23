@@ -11,29 +11,29 @@ class Solution{
 public:
     vector<int> nextPermutation(int N, vector<int> arr){
         // code here
-        int index = -1;
-        for ( int i = N-1;i >=0;i--){//findig the breakpoint
-            if (arr[i]>arr[i-1]){
-                index = i-1;
-                break;
+        int breakpoint  ;
+        for (int i = N-1; i >= 0;i--){
+            if (arr[i-1] < arr[i]){
+                 breakpoint = i-1 ;
+                break ;
             }
         }
         
-        if ( index == -1){
-            reverse(arr.begin(),arr.end());
+        if (breakpoint <0){
+            reverse(arr.begin() , arr.end()) ;
+            return arr;
         }
-        
         else{
-        for (int i = N-1;i>index;i--){
-            if (arr[i]>arr[index]){
-                swap(arr[i],arr[index]);
-                break;
+            for (int j = N-1 ; j >=0 ; j-- ){
+                if (arr[breakpoint] <arr[j]){
+                    swap(arr[breakpoint] ,arr[j]);
+                    sort(arr.begin()+ breakpoint+1,arr.end() );
+                    return arr;
+                }
             }
         }
-        int k =index+1;
-        sort(arr.begin()+k ,arr.end());
-        }
-        return arr;
+        
+        
     }
 };
 
