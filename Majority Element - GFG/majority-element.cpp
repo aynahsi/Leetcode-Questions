@@ -17,18 +17,35 @@ class Solution{
     {
         
         // your code here
-         unordered_map<int, int> map; 
-        for(int i=0;i<size;i++){
-            map[a[i]]++;
+        int ele = 0 ;
+        int cnt = 0 ;
+        for (int i = 0 ; i < size ; i++){
+            
+            if (cnt == 0 ){
+                cnt = 1;
+                ele = a[i] ;
+            }
+                
+                else if (ele != a[i]){
+                    cnt-- ;
+                }    
+                else cnt ++ ;
+                
+                
+            }
+            int cnt1= 0 ;
+            for (int i = 0 ; i < size ; i++){
+                if (ele == a[i])cnt1++ ;
+                
+            }
+            
+            if (cnt1 > (size/2))return ele;
+            
+            else return -1;
+            
+        }
         
-        
-        if (map[a[i]]>size/2){
-            return a[i];
-    }
-   
-    }
-     return -1;
-    }
+    
 };
 
 //{ Driver Code Starts.
