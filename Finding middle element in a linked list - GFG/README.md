@@ -1,35 +1,35 @@
 # Finding middle element in a linked list
 ## Easy
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a singly linked list of <strong>N</strong> nodes.<br>
-The task is to find the <strong>middle</strong>&nbsp;of the linked list. For example, if the&nbsp;linked list is<br>
-<strong>1-&gt; 2-&gt;3-&gt;4-&gt;5</strong>,<strong>&nbsp;</strong>then the middle node of the list is&nbsp;<strong>3</strong>.<br>
-If there are&nbsp;two middle nodes(in case, when&nbsp;<strong>N</strong>&nbsp;is even),&nbsp;print the <strong>second middle</strong> element.<br>
-For example, if the linked list given is <strong>1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6</strong>, then the middle node of the list is <strong>4</strong>.</span></p>
+<div class="problems_problem_content__Xm_eO" speechify-initial-font-family="Roboto, sans-serif" speechify-initial-font-size="16px"><p speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;"><span style="font-size: 17px; font-family: urw-din;" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Given a singly linked list of <strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">N</strong> nodes.<br speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">
+The task is to find the <strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">middle</strong>&nbsp;of the linked list. For example, if the&nbsp;linked list is<br speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">
+<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">1-&gt; 2-&gt;3-&gt;4-&gt;5</strong>,<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">&nbsp;</strong>then the middle node of the list is&nbsp;<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">3</strong>.<br speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">
+If there are&nbsp;two middle nodes(in case, when&nbsp;<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">N</strong>&nbsp;is even),&nbsp;print the <strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">second middle</strong> element.<br speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">
+For example, if the linked list given is <strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6</strong>, then the middle node of the list is <strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">4</strong>.</span></p>
 
-<p><strong><span style="font-size:18px">Example 1:</span></strong></p>
+<p speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;"><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;"><span style="font-size: 17px; font-family: urw-din;" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Example 1:</span></strong></p>
 
-<pre><strong><span style="font-size:18px">Input:</span></strong><strong><span style="font-size:18px">
-</span></strong><span style="font-size:18px">LinkedList: 1-&gt;2-&gt;3-&gt;4-&gt;5
-<strong>Output: </strong>3 
-<strong>Explanation:</strong> 
+<pre speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;"><span style="font-size: 17px; font-family: urw-din;" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Input:</span></strong><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;"><span style="font-size: 17px; font-family: urw-din;" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">
+</span></strong><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">LinkedList: 1-&gt;2-&gt;3-&gt;4-&gt;5
+<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">Output: </strong>3 
+<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px" style="font-family: urw-din; font-size: 17px;">Explanation:</strong> 
 Middle of linked list is 3.</span>
 </pre>
 
-<p><strong><span style="font-size:18px">Example 2:&nbsp;</span></strong></p>
+<p speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Example 2:&nbsp;</span></strong></p>
 
-<pre><strong><span style="font-size:18px">Input:</span></strong><strong><span style="font-size:18px">
-</span></strong><span style="font-size:18px">LinkedList: 2-&gt;4-&gt;6-&gt;7-&gt;5-&gt;1
-<strong>Output: </strong>7 
-<strong>Explanation:</strong> 
+<pre speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Input:</span></strong><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">
+</span></strong><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">LinkedList: 2-&gt;4-&gt;6-&gt;7-&gt;5-&gt;1
+<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Output: </strong>7 
+<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Explanation:</strong> 
 Middle of linked list is 7.</span>
 </pre>
 
-<p><span style="font-size:18px"><strong>Your Task:</strong><br>
-The task is to complete the function<span style="font-size:18px"> </span><strong>getMiddle</strong>() which takes a head reference as the only argument and should return the data at the middle node of the linked list.</span></p>
+<p speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Your Task:</strong><br speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">
+The task is to complete the function<span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"> </span><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">getMiddle</strong>() which takes a head reference as the only argument and should return the data at the middle node of the linked list.</span></p>
 
-<p><span style="font-size:18px"><strong>Expected Time Complexity:&nbsp;</strong>O(N).<br>
-<strong>Expected Auxiliary Space:&nbsp;</strong>O(1).</span></p>
+<p speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Expected Time Complexity:&nbsp;</strong>O(N).<br speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">
+<strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Expected Auxiliary Space:&nbsp;</strong>O(1).</span></p>
 
-<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+<p speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><span style="font-size:18px" speechify-initial-font-family="urw-din" speechify-initial-font-size="17px"><strong speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">Constraints:</strong><br speechify-initial-font-family="urw-din" speechify-initial-font-size="17px">
 1 &lt;= N &lt;= 5000</span></p>
 </div>
