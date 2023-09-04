@@ -31,35 +31,44 @@ class Solution
 {
     public:
     //Function to rotate a linked list.
-   
     Node* rotate(Node* head, int k)
     {
         // Your code here
+      
+       int len = 1;
+       Node* tail = head ;
        
-        
-        int count = 1;
-        Node* last = head;
-         while (last->next !=NULL ){
-             last = last ->next;
-             count++;
-         }
-         
-         if (k == count){
-             return head;
-         }
-        
-         Node* temp= head;
-         Node* prev = NULL;
-        for ( int i = 0 ;i<k;i++){
-            prev = head;
-            head= head->next ;
+       while (tail->next != NULL){
+           tail = tail->next ;
+           len++;
            
-        }
-        prev ->next = NULL;
+       }
        
-       last->next =temp;
-        
-        return head ;
+       if (len == k)return head ;
+       
+        int count = k;
+        int np = count-1;
+       Node* curr = head;
+       
+       while (count >0){
+           head = head->next ;
+           count--;
+       }
+       
+       
+       Node* npp = curr ;
+       while(np>0){
+           npp= npp->next ;
+           np--;
+       }
+       
+       npp->next = NULL;
+       tail->next = curr ;
+       
+       return head;
+       
+       
+       
         
     }
 };
