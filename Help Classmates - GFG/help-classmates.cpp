@@ -14,29 +14,28 @@ class Solution{
     vector<int> help_classmate(vector<int> arr, int n) 
     { 
         // Your code goes here
-        stack<int>st;
-        st.push(-1);
-        vector<int>ans;
-        for (int i =arr.size()-1; i>=0;i--){
-           int curr=arr[i];
-            while (st.top()>= curr){
-                st.pop();
+        stack<int> s ;
+        vector<int>ans ;
+        ans.push_back(-1) ;
+        s.push(arr[n-1]);
+        for (int i = n-2; i >= 0 ; i--){
+            
+            while( !s.empty() && s.top() >= arr[i]){
+                s.pop() ;
             }
-            if (st.top()<curr){
-                ans.push_back(st.top());
-                st.push(curr);
+            if (s.empty())ans.push_back(-1);
+            else {
+               ans.push_back(s.top());
             }
             
-           
-               
-                
-                
+            s.push(arr[i]) ;
             }
+            
+            reverse(ans.begin() ,ans.end()) ;
+            return ans ;
+        }
         
-        
-        reverse(ans.begin(),ans.end());
-        return ans;
-    } 
+     
 };
 
 //{ Driver Code Starts.
